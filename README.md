@@ -1,5 +1,8 @@
 # Module: BIRTHDAYS, a module to display upcoming birthdays
 
+This is a fork of [Marco Merens project](https://github.com/marcomerens/anniversarymodule).
+The reason is simply to change the looks of it.
+
 The 'BIRTHDAYS' module is a costum module for [MagicMirror](https://github.com/MichMich/MagicMirror). 
 It displays the name, birthday and remaining days of a list of people sorted by whoever is next.
 
