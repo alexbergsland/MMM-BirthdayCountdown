@@ -1,26 +1,11 @@
-
-<div>
-	<table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Date</th>
-			<th>Days</th>
-		</tr>
-	</thead>
-		<tbody>
-		{% for p in people.slice(0,limit) %}
-		
-		<tr>
-			<td>{{p.name}}</td>
-			<td>{{p.date}}</td>
-		{% if p.days == 0 %}
-			<td>Today</td>
-		{% else %}
-			<td>{{p.days}}</td>
-		{% endif %}
-		</tr>	
-		{% endfor %}
-		</tbody>
-	</table>
-</div>
+{% for p in people.slice(0,limit) %}
+	{% if p.days == 0 %}
+		<div class="blue">Grattis {{p.name}}!</div>
+	{% elseif p.days == 1 %}
+		<div class="white">{{p.name}} fyller år</br></div>
+		<div class="blue"><td>i morgon</td></div>
+	{% else %}
+		<div class="white">{{p.name}} fyller år</br></div>
+		<div class="blue">{{p.days}} dagar kvar</div>
+	{% endif %}
+{% endfor %}
