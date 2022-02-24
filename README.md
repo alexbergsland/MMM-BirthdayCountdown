@@ -3,7 +3,7 @@
 This is a fork of [Marco Merens project](https://github.com/marcomerens/anniversarymodule).
 The reason is simply to change the looks of it.
 
-The 'BirthdayCountdown' module is a costum module for [MagicMirror](https://github.com/MichMich/MagicMirror). 
+The 'MMM-BirthdayCountdown' module is a costum module for [MagicMirror](https://github.com/MichMich/MagicMirror). 
 It displays the name, birthday and remaining days of a list of people sorted by whoever is next.
 
 The module is simple and can be used to learn about how modules for MagicMirror are done.
@@ -17,7 +17,7 @@ The dates are recalculated every hour.
 
 ```bash
 cd ~/MagicMirror/modules # navigate to module folder
-git clone https://github.com/brobergp/MMM-doomsDay.git # clone this repository
+git clone https://github.com/alexbergsland/MMM-BirthdayCountdown # clone this repository
 ```
 
   2\. Then, add the following into the `modules` section of your `config/config.js` file:
@@ -25,7 +25,7 @@ git clone https://github.com/brobergp/MMM-doomsDay.git # clone this repository
 
 ````javascript
 {
-    module: 'BirthdayCountdown',
+    module: 'MMM-BirthdayCountdown',
     position: 'top_right',  // This can be any of the regions.
     config: {
         limit:4,
