@@ -1,9 +1,9 @@
-# Module: BIRTHDAYS, a module to display upcoming birthdays
+# Module: MMM-BirthdayCountdown, a module to display upcoming birthdays
 
 This is a fork of [Marco Merens project](https://github.com/marcomerens/anniversarymodule).
 The reason is simply to change the looks of it.
 
-The 'BIRTHDAYS' module is a costum module for [MagicMirror](https://github.com/MichMich/MagicMirror). 
+The 'BirthdayCountdown' module is a costum module for [MagicMirror](https://github.com/MichMich/MagicMirror). 
 It displays the name, birthday and remaining days of a list of people sorted by whoever is next.
 
 The module is simple and can be used to learn about how modules for MagicMirror are done.
@@ -21,7 +21,7 @@ To use this module, add it to the modules array in the `config/config.js` file:
 ````javascript
 modules: [
   {
-    module: 'BIRTHDAYS',
+    module: 'BirthdayCountdown',
     position: 'top_right',  // This can be any of the regions.
     config: {
       // See 'Configuration options' for more information.
