@@ -29,7 +29,7 @@ git clone https://github.com/alexbergsland/MMM-BirthdayCountdown # clone this re
 ````javascript
 {
     module: 'MMM-BirthdayCountdown',
-    position: 'top_right',  // This can be any of the regions.
+    position: 'bottom_left',  // This can be any of the regions.
     config: {
         limit:1,
         people:[{name:"Marco",birthdate:"1973-12-30"},{name:"Ricky Bobby",birthdate:"1971-07-16"}]
