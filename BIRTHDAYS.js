@@ -1,10 +1,10 @@
 /* Magic Mirror
- * Module: BIRTHDAYS
+ * Module: BirthdayCountdown
  *
  * By Marco Merens
  * MIT Licensed.
  */
-Module.register("BIRTHDAYS", {
+Module.register("BirthdayCountdown", {
 
 
 	defaults: {
@@ -49,7 +49,7 @@ Module.register("BIRTHDAYS", {
 
 
 	getTemplate: function () {
-		return "BIRTHDAYS.njk";
+		return "BirthdayCountdown.njk";
 	},
 
 	getTemplateData: function () {
