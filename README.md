@@ -41,7 +41,7 @@ git clone https://github.com/alexbergsland/MMM-BirthdayCountdown # clone this re
 
 ## Custom CSS
 
-I also like to change the looks of it. Add the following to ```bash MagicMirror/css/custom.css``` or create it if it does not exist.
+I also like to change the looks of it. Add the following to ```MagicMirror/css/custom.css``` or create it if it does not exist.
 
 ````javascript
  .MMM-BirthdayCountdown .white {
