@@ -8,8 +8,8 @@ Module.register("MMM-BirthdayCountdown", {
 
 
 	defaults: {
-		limit:4,
-		people:[{name:"Marco",birthdate:"1973-12-30"}]
+		limit:1,
+		people:[{name:"Marco",birthdate:"1973-12-30"},{name:"Ricky Bobby",birthdate:"1971-07-16"}]
 	},
 	start:function() {
 		this.calculate()		
