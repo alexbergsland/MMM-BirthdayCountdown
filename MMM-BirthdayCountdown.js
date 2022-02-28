@@ -20,7 +20,7 @@ Module.register("MMM-BirthdayCountdown", {
 			setInterval(function(){
 				self.calculate()
 				self.updateDom()
-				},60*1000) // update every minute 60*60*1000) // update every hour
+				},60*60*1000) // update every hour
 			
 	},
 	calculate : function(){
