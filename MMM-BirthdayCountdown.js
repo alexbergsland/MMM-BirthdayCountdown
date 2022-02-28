@@ -20,33 +20,41 @@ Module.register("MMM-BirthdayCountdown", {
 			setInterval(function(){
 				self.calculate()
 				self.updateDom()
-				},60*60*1000) // update every hour
+				},60*1000) // update every minute 60*60*1000) // update every hour
 			
 	},
 	calculate : function(){
-		var now=new Date(new Date().toLocaleString("sv").substring(0,10))
+		//Log.log("MMM-BirthdayCountdown")
+		//console.log("MMM-BirthdayCountdown");
+		//var now= new Date(new Date(), "YYYY-MM-DD", "Europe/Stockholm")
+		var now=new Date(new Date().toLocaleString("sv-SE", {timeZone: "Europe/Stockholm"}).substring(0,10))
 		var thisyear=now.getUTCFullYear()
 		var today=new Date(thisyear,now.getUTCMonth(),now.getUTCDate()).getTime()
-		Log.log(now)
 		var months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 		this.config.people.forEach(function(p){
+
 			var bdate=new Date(p.birthdate)
 			var bmonth=bdate.getUTCMonth()
 			var bday=bdate.getUTCDate()
-			var diff=new Date(thisyear,bmonth,bday).getTime()-today
-			if (diff<0) {
-
-
-				diff=new Date(thisyear+1,bmonth,bday).getTime()-today}
-			p.days=Math.floor(diff/1000/60/60/24)
+	        var birthday = new Date(thisyear,bmonth,bday).toLocaleString("sv-SE", {timeZone: "Europe/Stockholm"}).substring(0,10)
+	        //Log.log("name: " + p.name)
+	        //Log.log("birthday:" + birthday)
+	        var now = new Date(new Date().toLocaleString("sv-SE", {timeZone: "Europe/Stockholm"}).substring(0,10))
+	        var timeparser = Date.parse(birthday) - Date.parse(now);
+			if (timeparser < 0) {
+		        var birthday = new Date(thisyear+1,bmonth,bday).toLocaleString("sv-SE", {timeZone: "Europe/Stockholm"}).substring(0,10)
+		        timeparser = Date.parse(birthday) - Date.parse(now);
+			}
+	        p.daysleft = Math.floor(timeparser/(1000*60*60*24));
 			p.date=bday+" "+months[bmonth]
+
+			//Log.log("daysLeft: " + p.daysleft)
+			//Log.log("-----------")
 			
 		})
-		this.config.people.sort(function(a,b){return a.days-b.days})
+		this.config.people.sort(function(a,b){return a.daysleft-b.daysleft})
 		
 	},
-
-
 
 	getTemplate: function () {
 		return "MMM-BirthdayCountdown.njk";
